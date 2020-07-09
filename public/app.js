@@ -1,4 +1,7 @@
+var x = 1;
+
 function som()
 	{
-		alert('Hello');
+		alert(x);
+		x = x + 1;
 	}
