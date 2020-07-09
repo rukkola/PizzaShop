@@ -1,0 +1,4 @@
+function som()
+	{
+		alert('Hello');
+	}
