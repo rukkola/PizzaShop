@@ -6,7 +6,7 @@ class CreateProducts < ActiveRecord::Migration[6.0]
   		t.decimal 	:price
   		t.decimal 	:size
   		t.boolean 	:is_spicy
- # 		t.string 	:path_to_image
+  		t.string 	:path_to_image
 
   		t.timestamps
   	end
