@@ -17,12 +17,19 @@ function add_to_cart(id)
 		window.localStorage.setItem(key, x);
 		//alert('Items in your cart: ' + cart_get_number());
 		update_orders_input();
+		update_orders_button();
 	}
 
 function update_orders_input()
 {
 	var orders = cart_get_orders()
 	$('#orders_input').val(orders); // #обращаемся по id, если .то атрибут клас // синтаксис jqwery
+}
+
+function update_orders_button()
+{
+	var text = 'Cart (' + cart_get_number() + ')';
+	$('#orders_button').val(text); // установка текста
 }
 
 function cart_get_number()
