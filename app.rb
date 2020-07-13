@@ -8,7 +8,9 @@ require 'sinatra/activerecord'
 set :database, {adapter: "sqlite3", database: "pizzashop.db"}
 
 class Product < ActiveRecord::Base
+end
 
+class Order < ActiveRecord::Base
 end
 
 get '/' do
@@ -23,9 +25,9 @@ end
 post '/cart' do
 	@orders_input = params[:orders]
 	@items = parse_orders_inpit @orders_input
-
+					# id, cnt 
 	@items.each do |item|
-		item[0] = Product.find(item[0])
+		item[0] = Product.find(item[0]) # id замещаем объектом
 	end
 
 	erb :cart
