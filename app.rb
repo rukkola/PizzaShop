@@ -22,8 +22,13 @@ get '/about' do
 	erb :about
 end
 
+post '/place_order' do
+	@order = Order.create params[:order] # сразу создается и записывается в базу
+	erb :order_placed
+end
+
 post '/cart' do
-	@orders_input = params[:orders]
+	@orders_input = params[:orders_input]
 	@items = parse_orders_inpit @orders_input
 					# id, cnt 
 	@items.each do |item|
